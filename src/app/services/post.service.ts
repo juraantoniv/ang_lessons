@@ -9,7 +9,7 @@ import {IPost} from "../interfeces";
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class PostService {
 
   constructor(private httpClient: HttpClient) {
   }
