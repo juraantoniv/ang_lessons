@@ -9,6 +9,17 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from "@angular/router";
+import { MainLayoutComponent } from './layuots/main.layout/main.layout.component';
+import { HeaderComponent } from './components/header/header.component';
+
+const routes:Routes=[
+  {path:'', component:MainLayoutComponent,children:[
+  {path:'', redirectTo:'posts',pathMatch:'full'},
+  {path:'posts', component:PostsComponent},
+  {path:'comments', component:CommentsComponent}
+    ]},
+];
 
 @NgModule({
   declarations: [
@@ -18,11 +29,14 @@ import {HttpClientModule} from "@angular/common/http";
     PostComponent,
     PostsComponent,
     CommentComponent,
-    CommentsComponent
+    CommentsComponent,
+    MainLayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
