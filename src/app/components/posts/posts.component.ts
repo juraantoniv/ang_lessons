@@ -11,6 +11,7 @@ import {PostService} from "../../services";
 })
 export class PostsComponent implements OnInit {
   posts:IPost[]
+  selectPost:IPost
 
   constructor( private PostService:PostService) { }
 
@@ -20,4 +21,8 @@ export class PostsComponent implements OnInit {
   }
 
 
+  getPost(selectedPost: IPost) {
+    this.selectPost = selectedPost
+
+  }
 }

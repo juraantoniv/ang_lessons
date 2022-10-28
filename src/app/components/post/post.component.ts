@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IPost} from "../../interfeces";
 
 @Component({
@@ -10,9 +10,16 @@ export class PostComponent implements OnInit {
   @Input()
   post:IPost;
 
+  @Output()
+  selectPost = new EventEmitter<IPost>()
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  poststLift() {
+    this.selectPost.emit(this.post)
+
+  }
 }

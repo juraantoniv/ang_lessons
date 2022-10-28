@@ -10,6 +10,7 @@ import {CommentService} from "../../services/comment.service";
 })
 export class CommentsComponent implements OnInit {
   comments:IComment[]
+  selectComment:IComment
 
   constructor( private  CommentService:CommentService) { }
 
@@ -19,4 +20,8 @@ export class CommentsComponent implements OnInit {
   }
 
 
+  getComment(commentLift: IComment) {
+    this.selectComment = commentLift
+
+  }
 }
