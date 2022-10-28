@@ -3,7 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {urls} from '../configs';
-import {IPost} from "../interfeces";
+import {IPost, IUser} from "../interfeces";
+import {Params} from "@angular/router";
 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class PostService {
     return this.httpClient.get<IPost[]>(urls.posts)
   }
 
-  // getById(id: number): Observable<IUser> {
-  //   return this.httpClient.get<IUser>(`${urls.users}/${id}`)
-  // }
+  getById(id: Params): Observable<IUser> {
+    return this.httpClient.get<IUser>(`${urls.users}/${id}`)
+  }
 }
