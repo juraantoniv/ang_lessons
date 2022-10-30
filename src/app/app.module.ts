@@ -13,16 +13,17 @@ import {RouterModule, Routes} from "@angular/router";
 import { MainLayoutComponent } from './layuots/main.layout/main.layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserDetailsComponent } from './components/user.details/user.details.component';
+import {AppRoutingModule} from "./app-routing.module";
 
-const routes:Routes=[
-  {path:'', component:MainLayoutComponent,children:[
-  {path:'', redirectTo:'posts',pathMatch:'full'},
-  {path:'posts', component:PostsComponent,children:[
-      {path:':id',component:UserDetailsComponent}
-    ]},
-  {path:'comments', component:CommentsComponent}
-    ]},
-];
+// const routes:Routes=[
+//   {path:'', component:MainLayoutComponent,children:[
+//   {path:'', redirectTo:'posts',pathMatch:'full'},
+//   {path:'posts', component:PostsComponent,children:[
+//       {path:':id',component:UserDetailsComponent}
+//     ]},
+//   {path:'comments', component:CommentsComponent}
+//     ]},
+// ];
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
+    // RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
