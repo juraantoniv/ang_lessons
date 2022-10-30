@@ -15,15 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserDetailsComponent } from './components/user.details/user.details.component';
 import {AppRoutingModule} from "./app-routing.module";
 
-// const routes:Routes=[
-//   {path:'', component:MainLayoutComponent,children:[
-//   {path:'', redirectTo:'posts',pathMatch:'full'},
-//   {path:'posts', component:PostsComponent,children:[
-//       {path:':id',component:UserDetailsComponent}
-//     ]},
-//   {path:'comments', component:CommentsComponent}
-//     ]},
-// ];
+
 
 @NgModule({
   declarations: [
@@ -42,7 +34,6 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
-    // RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
