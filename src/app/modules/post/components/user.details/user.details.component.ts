@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+
 import {ActivatedRoute, Router} from "@angular/router";
-import {IPost, IUser} from "../../interfeces";
-import {PostService} from "../../services";
+import {IPost} from "../../../../interfeces/posts.interface";
+import {IUser} from "../../interfeces/user.interface";
+import {PostService} from "../../services/post.service";
+import {Component, OnInit} from "@angular/core";
+
+
 
 @Component({
   selector: 'app-user.details',
-  templateUrl: './user.details.component.html',
+  templateUrl:'./user.details.component.html',
   styleUrls: ['./user.details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
@@ -17,7 +21,7 @@ export class UserDetailsComponent implements OnInit {
     this.post=this.router.getCurrentNavigation()?.extras.state?.['post']
       console.log(this.post)
       if(this.post){
-        this.PostService.getById(id).subscribe(value1 => this.user=value1)
+        this.PostService.getById(id).subscribe(valuee => this.user=valuee)
       }
     })
   }

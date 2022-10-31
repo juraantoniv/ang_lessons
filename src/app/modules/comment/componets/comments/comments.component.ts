@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {IComment} from "../../interfeces";
+
 import {CommentService} from "../../services/comment.service";
+import {IComment} from "../../interfeces/comments.interface";
+import {Component, OnInit} from "@angular/core";
+
 
 
 @Component({
   selector: 'app-comments',
-  templateUrl: './comments.component.html',
+  templateUrl:'./comments.component.html',
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {

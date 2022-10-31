@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {urls} from "../../configs";
-import {IPost} from "../../interfeces";
-import {PostService} from "../../services";
+
+import {IPost} from "../../../../interfeces/posts.interface";
+import {Component, OnInit} from "@angular/core";
+import {PostService} from "../../services/post.service";
+
 
 @Component({
   selector: 'app-posts',

@@ -1,5 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IComment} from "../../interfeces";
+
+import {IComment} from "../../interfeces/comments.interface";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+
 
 @Component({
   selector: 'app-comment',
